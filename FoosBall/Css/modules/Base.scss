@@ -81,10 +81,6 @@ page width. Or, you can specify an exact pixel width. */
 /* TAB MENU
 ----------------------------------------------------------*/
 .menu {
-    position: absolute;
-    top: 50px;
-    right: 15px;
-    background: none #fff;
     padding: 0;
     margin: 0;
     &#login-menu {
@@ -98,20 +94,17 @@ page width. Or, you can specify an exact pixel width. */
         }
     }
     &#main-menu {
-        width: 150px;
-        border-radius: 0px 0px 10px 10px;
-        box-shadow: 5px 0px 20px 3px;
+        padding:0;
+        margin:0;
+        list-style-type:none;
 
-        li {
-            border-bottom: 1px solid $seperator-color;
+        & > li {
             list-style: none;
-            display: list-item; 
+            display: inline; 
             margin: 0;
-            width: 100%;
             cursor: pointer;
 
             &:hover {
-                background: darken(#fff, 5);
                 text-decoration: none;
             }
 
@@ -123,11 +116,16 @@ page width. Or, you can specify an exact pixel width. */
                 border-bottom: none;
             }
 
-            a, a:hover {
-                display: block;
+            a {
+                color: #999;
                 text-decoration: none;
-                padding: 10px 15px;
+                padding: 10px 5px;
             }
+
+            a:hover  {
+                color: lighten(#999, 50);
+            }
+
         }
     }
 }

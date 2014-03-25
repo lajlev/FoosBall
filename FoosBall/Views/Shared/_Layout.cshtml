@@ -17,32 +17,6 @@
     </title>
 
     <link href="@Url.Content("~/css/minified/foosball.min.css")" rel="stylesheet" type="text/css" />
-
-    <script src="/js/lib/jquery.js"></script>
-    <script src="/Scripts/jquery.signalR-2.0.0.min.js"></script>
-    <script src="/js/lib/angular.js"></script>
-    <script src="/js/lib/angular-resource.js"></script>
-    <script src="/js/lib/angular-route.js"></script>
-    <script src="/js/lib/angular-animate.js"></script>
-    <script src="/js/lib/md5.js"></script>
-    <script src="/js/lib/highcharts.js"></script>
-    <script src="/js/lib/event.js"></script>
-
-    <script src="/js/app/jquery.foosBall.js"></script>
-    <script src="/js/app/foosball.app.js"></script>
-    <script src="/js/app/foosball.services.js"></script>
-    <script src="/js/app/foosball.directives.js"></script>
-    <script src="/js/controllers/base.controller.js"></script>
-    <script src="/js/controllers/admin.controller.js"></script>
-    <script src="/js/controllers/login.controller.js"></script>
-    <script src="/js/controllers/matches.controller.js"></script>
-    <script src="/js/controllers/players.controller.js"></script>
-    <script src="/js/controllers/playerstats.controller.js"></script>
-    <script src="/js/controllers/signup.controller.js"></script>
-    <script src="/js/controllers/stats.controller.js"></script>
-    <script src="/js/controllers/submitmatch.controller.js"></script>
-    <script src="/js/controllers/user.controller.js"></script>
-    <script src="/js/controllers/advancedstats.controller.js"></script>
 @*
     <script src="/js/minified/app.min.js"></script>
 *@
@@ -81,18 +55,16 @@
                     </div>
                 </div>
             </a>
-
-            <!-- MAIN MENU -->
             <nav>
-                <div class="main-menu-arrow menu-arrow" ng-hide="uiSettings.hideMainMenu"></div>
-                <ul id="main-menu" class="menu" ng-hide="uiSettings.hideMainMenu">
-                    <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Home"><a class="main-menu-item" ng-href="/#/">Home</a></li>
-                    <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Scoreboard"><a class="main-menu-item" ng-href="/#/players">Scoreboard</a></li>
-                    <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Matches"><a class="main-menu-item" ng-href="/#/matches">Matches</a></li>
-                    <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Stats"><a class="main-menu-item" ng-href="/#/stats">Stats</a></li>
-                    <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="AdvStats"><a class="main-menu-item" ng-href="/#/advancedstats">Advanced Stats</a></li>
-                    <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Features"><a class="main-menu-item" ng-href="/#/features">Features</a></li>
-                    <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Admin" ng-if="session.IsLoggedIn && session.IsAdmin" >
+                <!-- MAIN MENU -->
+                <ul id="main-menu" class="menu">
+                    <li class="Home"><a class="main-menu-item" ng-href="/#/">Home</a></li>
+                    <li class="Scoreboard"><a class="main-menu-item" ng-href="/#/players">Scoreboard</a></li>
+                    <li class="Matches"><a class="main-menu-item" ng-href="/#/matches">Matches</a></li>
+                    <li class="Stats"><a class="main-menu-item" ng-href="/#/stats">Stats</a></li>
+                    <li class="AdvStats"><a class="main-menu-item" ng-href="/#/advancedstats">Advanced Stats</a></li>
+                    <li class="Features"><a class="main-menu-item" ng-href="/#/features">Features</a></li>
+                    <li class="Admin" ng-if="session.IsLoggedIn && session.IsAdmin">
                         <a class="main-menu-item" ng-href="/#/admin">Admin</a>
                     </li>
                 </ul>
@@ -116,13 +88,8 @@
                     Hi {{session.User.Name}}
                     [ <a href ng-href="/#/user-profile">Account</a> &middot; <a href ng-click="logout()">Log out</a> ]
                 </div>
-
                 <div ng-if="!session.IsLoggedIn" class="menu-login-info">
                     <a href ng-click="showLogonMenu()">Log on</a> or <a href ng-click="showSignupMenu()">Sign up</a>
-                </div>
-
-                <div class="menu-list-button">
-                    <a href ng-click="showMainMenu()"></a>
                 </div>
             </div>
 
@@ -137,6 +104,31 @@
 
         <!-- Deferred Javascript -->
         <script src="/js/Shared.js"></script>
+        <script src="/js/lib/jquery.js"></script>
+        <script src="/Scripts/jquery.signalR-2.0.0.min.js"></script>
+        <script src="/js/lib/angular.js"></script>
+        <script src="/js/lib/angular-resource.js"></script>
+        <script src="/js/lib/angular-route.js"></script>
+        <script src="/js/lib/angular-animate.js"></script>
+        <script src="/js/lib/md5.js"></script>
+        <script src="/js/lib/highcharts.js"></script>
+        <script src="/js/lib/event.js"></script>
+
+        <script src="/js/app/jquery.foosBall.js"></script>
+        <script src="/js/app/foosball.app.js"></script>
+        <script src="/js/app/foosball.services.js"></script>
+        <script src="/js/app/foosball.directives.js"></script>
+        <script src="/js/controllers/base.controller.js"></script>
+        <script src="/js/controllers/admin.controller.js"></script>
+        <script src="/js/controllers/login.controller.js"></script>
+        <script src="/js/controllers/matches.controller.js"></script>
+        <script src="/js/controllers/players.controller.js"></script>
+        <script src="/js/controllers/playerstats.controller.js"></script>
+        <script src="/js/controllers/signup.controller.js"></script>
+        <script src="/js/controllers/stats.controller.js"></script>
+        <script src="/js/controllers/submitmatch.controller.js"></script>
+        <script src="/js/controllers/user.controller.js"></script>
+        <script src="/js/controllers/advancedstats.controller.js"></script>
         @RenderSection("Javascript", false)
         @MiniProfiler.RenderIncludes()
     </body>

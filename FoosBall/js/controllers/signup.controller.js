@@ -27,7 +27,6 @@
                     });
                 });
 
-                $scope.uiSettings.hideMainMenu = true;
                 $scope.uiSettings.hideSignupMenu = true;
                 $scope.uiSettings.hideLogonMenu = true;
                 

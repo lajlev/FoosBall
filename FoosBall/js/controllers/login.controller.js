@@ -18,7 +18,6 @@
                 window.angular.forEach(responseData.Data, function (value, key) {
                     $scope.session[key] = value;
                 });
-                $scope.uiSettings.hideMainMenu = true;
                 $scope.uiSettings.hideSignupMenu = true;
                 $scope.uiSettings.hideLogonMenu = true;
 
