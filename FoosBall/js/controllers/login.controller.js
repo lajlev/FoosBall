@@ -1,4 +1,4 @@
-﻿FoosBall.controller('LoginController', ['$scope', 'session', function($scope, session) {
+﻿FoosBall.controller('LoginController', ['$scope', 'session', '$location', function ($scope, session, $location) {
     $scope.loginMessage = "";
     $scope.showLoginMessage = false;
 
@@ -20,6 +20,7 @@
                 });
 
                 clearLogonForm($scope);
+                redirect();
             } else {
                 $scope.loginMessage = responseData.Message;
                 $scope.showLoginMessage = true;
@@ -33,5 +34,11 @@
         scope.email = "";
         scope.name = "";
         scope.password = "";
+    }
+
+    function redirect() {
+        if ($location.path() !== $scope.appSettings.redirectUrl) {
+            $location.path($scope.appSettings.redirectUrl);
+        }
     }
 }]);

@@ -46,7 +46,7 @@
             </div>
 
             <div data-ng-if="!session.IsLoggedIn" class="menu-login-info">
-                <a href="#" ng-href="/#/login">Log on</a> or <a href="#" ng-href="/#/signup">Sign up</a>
+                <a href="#" ng-href="/#/login?redirect={{appSettings.redirectUrl}}">Log on</a> or <a href="#" ng-href="/#/signup">Sign up</a>
             </div>
         </div>
 

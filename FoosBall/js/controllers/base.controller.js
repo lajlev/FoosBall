@@ -1,4 +1,4 @@
-﻿FoosBall.controller('BaseController', ['$scope', 'session', 'appSettings', 'staticResources', function ($scope, session, appSettings, staticResources) {
+﻿FoosBall.controller('BaseController', ['$scope', 'session', 'appSettings', 'staticResources', '$location', function ($scope, session, appSettings, staticResources, $location) {
     $scope.session = {};
     $scope.appSettings = {};
     $scope.staticResources = {};
@@ -23,4 +23,9 @@
         var env = environment.toLowerCase() === 'production' ? "" : (environment + " ");
         return (env + appName);
     }
+
+    // Make cache the users previous path/url to enabling going back to where the user came from
+    $scope.$watch(function () { return $location.path(); }, function (newValue, oldValue) {
+        $scope.appSettings.redirectUrl = oldValue;
+    });
 }]);
