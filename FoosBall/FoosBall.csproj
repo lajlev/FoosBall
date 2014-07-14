@@ -138,11 +138,12 @@
     <Compile Include="Models\Custom\Streak.cs" />
     <Compile Include="Models\Custom\Streaks.cs" />
     <Compile Include="Models\Domain\User.cs" />
-    <Content Include="css\foosball-background.jpg" />
-    <Content Include="css\foosball-icon.png" />
+    <Content Include="css\images\foosball-background.jpg" />
+    <Content Include="css\images\foosball-icon.png" />
     <Content Include="css\minified\foosball.min.css" />
-    <Content Include="css\pingpong-background.jpg" />
-    <Content Include="css\pingpong-icon.png" />
+    <Content Include="css\images\pingpong-background.jpg" />
+    <Content Include="css\images\pingpong-icon.png" />
+    <Content Include="js\controllers\advancedstats.controller.js" />
     <Content Include="js\directives\foosball-score.directive.js" />
     <Content Include="js\lib\angular-resource.js" />
     <Content Include="js\lib\angular-route.js" />
@@ -152,6 +153,7 @@
     <Content Include="js\lib\jquery.js" />
     <Content Include="js\lib\jquery.min.js.map" />
     <Content Include="js\lib\md5.js" />
+    <Content Include="js\services\advancedstats.service.js" />
     <Content Include="js\services\staticresources.service.js" />
     <Content Include="js\services\appsettings.service.js" />
     <Content Include="js\services\session.service.js" />
@@ -230,7 +232,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="css\NewFolder1\" />
     <Folder Include="ViewHelpers\" />
   </ItemGroup>
   <ItemGroup>
@@ -305,15 +306,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\modules\AdvStats.scss">
-      <Compile>False</Compile>
-      <Minify>False</Minify>
-      <CompileStyle>Nested</CompileStyle>
-      <DebugInfo>False</DebugInfo>
-    </Content>
+    <Content Include="Views\Shared\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Index.cshtml" />
+    <Content Include="css\modules\AdvStats.scss" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
